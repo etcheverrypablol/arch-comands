@@ -1,0 +1,44 @@
+Steps:
+# pacman -Syu
+
+# pacman -S apache
+
+Edit /etc/http/conf/httpd.conf file,
+nano /etc/httpd/conf/httpd.conf
+Search and comment out the following line if it is not already:
+[..]
+#LoadModule unique_id_module modules/mod_unique_id.so
+[..]
+Save and close.
+
+Enable Apache service to start at boot and restart Apache service using commands:
+# systemctl enable httpd
+# systemctl restart httpd
+
+You can verify whether Apache is running or not with command:
+# systemctl status httpd
+Sample out
+httpd.service - Apache Web Server
+ Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; vendor preset: disabled)
+ Active: active (running) since Tue 2016-02-16 13:00:18 IST; 7s ago
+ Main PID: 1067 (httpd)
+ Tasks: 82 (limit: 512)
+ CGroup: /system.slice/httpd.service
+ ├─1067 /usr/bin/httpd -k start -DFOREGROUND
+ ├─1070 /usr/bin/httpd -k start -DFOREGROUND
+ ├─1071 /usr/bin/httpd -k start -DFOREGROUND
+ └─1072 /usr/bin/httpd -k start -DFOREGROUND
+
+Test Apache
+Let us create a sample page int the Apache directory, i.e /srv/http.
+$ nano /srv/http/index.html
+Add the following line:
+
+<html>
+ <title>Welcome</title>
+  <body>
+   <h2>Welcome to OSTechNix test page</h2>
+  </body>
+</html>
+
+Now, open your web browser and navigate to http://localhost or http://IP-address.
