@@ -1,0 +1,13 @@
+Install first composer:
+$ sudo pacman -S composer --noconfirm
+
+Download laravel installer using composer:
+$ composer global require "laravel/installer"
+
+Edit ~/.bashrc and place the following line
+
+export PATH=${PATH}:/home/pablolserver/.config/composer/vendor/laravel/installer
+
+for the new configuration to work, execute the following command: (This did not work with me)
+
+sourse ~/.bashrc
