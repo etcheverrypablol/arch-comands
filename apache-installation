@@ -1,19 +1,25 @@
-Steps:
+STEPS:
+Update the system
+
 # pacman -Syu
 
 # pacman -S apache
 
 Edit /etc/http/conf/httpd.conf file,
-nano /etc/httpd/conf/httpd.conf
+
+# nano /etc/httpd/conf/httpd.conf
+
 Search and comment out the following line if it is not already:
 [..]
 #LoadModule unique_id_module modules/mod_unique_id.so
 [..]
 Save and close.
 
-Enable Apache service to start at boot and restart Apache service using commands:
+-----------------------------------------------------------------------------------------
+ENABLE Apache service to start at boot and restart Apache service using commands:
+
 # systemctl enable httpd
-# systemctl restart httpd
+# systemctl restart httpd (This is necesary)
 
 You can verify whether Apache is running or not with command:
 # systemctl status httpd
@@ -29,7 +35,9 @@ httpd.service - Apache Web Server
  ├─1071 /usr/bin/httpd -k start -DFOREGROUND
  └─1072 /usr/bin/httpd -k start -DFOREGROUND
 
-Test Apache
+-----------------------------------------------------------------------------------------
+TEST Apache
+
 Let us create a sample page int the Apache directory, i.e /srv/http.
 $ nano /srv/http/index.html
 Add the following line:
@@ -42,3 +50,21 @@ Add the following line:
 </html>
 
 Now, open your web browser and navigate to http://localhost or http://IP-address.
+
+-----------------------------------------------------------------------------------------
+CONFIGURATION
+
+Configure the port: Modify the file /etc/httpd/conf/httpd.conf. Find the line that says 
+"listen" (Search with Ctrl+W in nano) and modify the port.
+
+Folder permissions: you may have to place the same permissions as the http folder. For that use 
+the command:
+# chown [who][+/-][permission] [archive]
+[who]: u (user) g (group) o (other)
++: add permission
+-: remove permission
+[permission]: w (write) r (read) x (execute)
+[archive]: file to modify
+
+For example: chmod u-r -R CursoPHP (Remove the read permission from the user) (-R is to be 
+recursive)
