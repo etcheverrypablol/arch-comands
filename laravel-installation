@@ -11,3 +11,7 @@ export PATH=${PATH}:/home/pablolserver/.config/composer/vendor/laravel/installer
 for the new configuration to work, execute the following command: (This did not work with me)
 
 sourse ~/.bashrc
+
+Font: 
+https://www.trabalhosgratuitos.com/Exatas/Inform%C3%A1tica/Como-Instalar-o-Laravel-no-Arch-Linux-1192958.html
+
