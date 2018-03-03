@@ -1,0 +1,22 @@
+app: es donde vamos a poner nuestro código
+boostrap: es lo que usa laravel para inicializar
+config: configuraciones
+database: carpeta con código de bases de datos
+public: es una carpeta pública y es la única parte que va a ser justamente pública en nuestro 
+sitio
+resourse: es donde vamos a ver todos los archivos javascripts, css, imágenes. Todo lo que tenga 
+que ver con el frontend. Ahí es donde vamos a poder ponerlos para luego compilarlos y poder 
+llevarlos a la parte pública.
+routes: es para configurar las rutas de nuestra aplicación.
+storage: es donde se van a guardar datos compilados, datos de cache, imágenes que subamos
+test: laravel nos propone una estructura para hacer testing.		
+vendor: es donde están todas las dependencias que nos descargó composer.
+Otros archivos: 
+
+EJECUTAR EL SERVER DE LARAVEL:
+
+$ php artisan serve
+
+Ingresamos en el navegador e colocamos localhost:8000
+Con esto ya estamos listos para arrancar a desarrollar en laravel.
+
