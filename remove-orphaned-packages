@@ -1,0 +1,16 @@
+
+sudo pacman -Rsc $(pacman -Qtdq)
+
+pacman -Rsc:
+-R: elimina el paquete del sistema.
+-c: elimina los paquetes y los que dependen del mismo.
+-s: elimina todos los paquetes y sus dependencias siempre que no sean requeridos por otros paquetes que si están siendo usados en nuestro sistema.
+
+pacman -Qtdq:
+-Q busca los paquetes en nuestra base de datos.
+-t: filtra la salida de los paquetes que no son necesarios.
+-d: filtra la salida de los paquetes instalados como dependencias.
+-q: mostrará menos información de lo habitual.
+
+font:https://linuxforallsite.wordpress.com/2016/03/08/eliminar-paquetes-huerfanos-en-arch/
+
