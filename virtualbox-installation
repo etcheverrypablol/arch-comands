@@ -1,0 +1,4 @@
+Para solucionar el error que aparece al momento de ejecutar el sistema operativo, 
+correr el siguiente comando en modo root:
+
+sudo modprobe vboxdrv
